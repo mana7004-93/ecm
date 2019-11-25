@@ -1,9 +1,14 @@
 from django.urls import path
 from . import views
-app_name='authapp'
+from django.conf.urls import include
+
+app_name='cartapp'
 urlpatterns=[
-    path('signup/',views.signup),
-    path('login/',views.login),
-    path('my_logout',views.my_logout),
-    path('signup/otpvalidation',views.otpvalidation),
+    path('addcart',views.addcart,name='addcart'),
+    path('insertcart',views.insertcart,name='insertcart'),
+    path('cart/',views.cart,name='cart'),
+    path('deletecart',views.deletecart,name='delete'),
+    path('modifycart',views.modifycart,name='modifycart'),
+    path('modifiedcart/',views.modifiedcart,name='modifiedcart'),
+    path('views',views.viewcart),
 ]
